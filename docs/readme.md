@@ -1,1 +1,10 @@
-Put your reflections in here
+During this project, I had somewhat of a hard time thinking about a new approach to this. Mainly thinking about how can I complete this aissgnment with a working
+code. Instead of going down my own path, creating a code that I structured, I chose to use the code and examples provided in lectures and began taking extra notes
+on the code that was presentented that day. For example, I would look at the helperfunction.h and write comments within the code on what it could be used for as well
+as what the specifc piece of code does in my own terms. I spent the first week learning and reading the lecture codes to better understand them and their function, in
+order to know what I'm doing with readFile or readInt. However, I hit many walls of errors and felt like I was running into dead ends. I often spent most days in 
+tutoring but it seemed like it wasn't much help because I was lecturing on what certain functions does and helping tutors figure out what my code was rather than getting
+help. So I ended up scrapping the project and began writting a simple hard code where the file would automatically change every number into a 0 and I would force the bunny.ppm to change certain numbers, such as the first and third number into 255 in order to change the picture's color. While this did help me get more help from the
+tutors because I was able to spend more time with help on one sheet/doc of code than several. But I still ran into walls of errors and had to figure out other solutions
+towards the error messages, which was fine because I was able to understan the problem, but I wasn't able to create a working code in the end. Part of me thinks its 
+because I spent the first week making sure I understood the lecture notes but the other half was because I couldn't understand how to go about in making a working code. In the end, I wasn't able to complete milestone 1, nor milestone 2, not because I didn't give myself enough time for coding, but because I feel behind when it comes to what is to be expected of me when coding in your class.
