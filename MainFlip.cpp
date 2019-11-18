@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <string>
+#include <PpmDocument.hpp>
 using namespace std;
 
 int **allocateImage(int numRows, int numCols);
@@ -10,7 +11,7 @@ int **readImage(string file, int& numRows, int& numCols);
 void deallocateImage(int **image, int numRows, int numCols);
 int **flipImage_vertical(int **image, int numRows, int numCols);
 int **flipImage_horizontal(int **image, int numRows, int numCols);
-
+string text;
 
 int main(int argc, char *argv[])
 {	
@@ -18,14 +19,58 @@ int main(int argc, char *argv[])
     int **image, **newImage, numRows, numCols, numRowsOut, numColsOut, i;
 
     //Read image in, allocate memory
-    image = readImage(, numRows, numCols);
+    image = readImage("bunny.ppm", numRows, numCols);
     if (!image)
     {
         // Image file was not found.
         return 1; 
     }
-    i=3;
-
+    else if (image)
+    {
+        cout << "To flip image horizontal type flip by y\n"
+                "To flop image vertical type flip by x" << endl;       
+    }
+    getline(cin, text);
+    while (text.good() == true)
+    {
+        if (text == "flip by x")
+        {
+                // Allocate new array size of original 
+                int rows = numRows - 1;
+                for(int i=0; i < numRows; i++)
+                {
+                    for(int j=0; j < numCols; j++)
+                    {
+                         //Subtract i from amount of rows to flip image
+                        tempArray[i][3 * j] = image[rows-i][3 * j]; 
+                        tempArray[i][3 * j + 1] = image[rows-i][3 * j + 1];
+                        tempArray[i][3 * j + 2] = image[rows-i][3 * j + 2];
+                    }
+                }
+        cout << "Image flipped" << endl;
+        return tempArray;
+        }
+        else if (text == "flip by y")
+        {
+            // Allocate new array size of original
+             int rows = numRows - 1;
+            for(int i=0; i < numRows; i++)
+            {
+                for(int j=0; j < numCols; j++)
+                {
+                    //Subtract i from amount of rows to flip image
+                    tempArray[i][3 * j] = image[rows-i][3 * j]; 
+                    tempArray[i][3 * j + 1] = image[rows-i][3 * j + 1];
+                    tempArray[i][3 * j + 2] = image[rows-i][3 * j + 2];
+                }
+            }
+        cout << "Image flipped" << endl;
+        return tempArray;
+        }
+        else if
+                return "error";
+    }
+    
     // Handles multiple arguments
     while (i < argc)
     {
@@ -83,7 +128,7 @@ void saveImage(string filename, int **image, int numRows, int numCols)
     }
     outFile.close();
     cout << filename << " has been successfully closed" << endl;
-    cout << "Saved " << filename << " to disk" << endl;
+    cout << "Saved " << filename << " to drive" << endl;
 }
 // Reads the image file
 int **readImage(string filename, int& numRows, int& numCols)
